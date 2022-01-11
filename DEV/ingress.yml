@@ -5,7 +5,7 @@ metadata:
   name: hello-world
 spec:
   rules:
-    - host: hello-world.bastien
+    - host: hello-world.laura
       http:
         paths:
           - path: /
