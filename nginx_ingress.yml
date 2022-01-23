@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Ingress
+enabled: true
+rbac:
+  create: true
+defaultBackend:
+  enabled: true
+controller:
+  service:
+    enabled: true
+    externalIPs:
+      - VOTRE-IP
+    enableHttp: true
+    enableHttps: true
+    healthCheckNodePort: 0
+    ports:
+      http: 80
+      https: 443
+    targetPorts:
+      http: http
+      https: https
+    type: NodePort

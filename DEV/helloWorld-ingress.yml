@@ -15,10 +15,3 @@ spec:
                 name: hello-world
                 port:
                   number: 80
-          - path: /lol
-            pathType: Prefix
-            backend:
-              service:
-                name: service-lol
-                port:
-                  number: 8080
