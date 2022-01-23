@@ -11,8 +11,6 @@ contexts:
       user: dev
       namespace:
         - dev
-        - rec
-        - prep
         - prod
 
   - name: client
