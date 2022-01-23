@@ -15,10 +15,3 @@ spec:
                 name: devops-303
                 port:
                   number: 80
-          - path: /lol
-            pathType: Prefix
-            backend:
-              service:
-                name: service
-                port:
-                  number: 8080

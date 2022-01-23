@@ -1,14 +1,12 @@
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
   namespace: prod
   name: devops-303
 spec:
   selector:
     app: devops-303
-  type: NodePort
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 80
-      nodePort: 32767
+      targetPort: 8884
