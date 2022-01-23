@@ -1,25 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
+  namespace: dev
+  name: redis
   labels:
-    io.kompose.service: redis-db
-  name: redis-db
+    app: redis
 spec:
-  replicas: 1
   selector:
     matchLabels:
-      service: redis-db
-  strategy: {}
+      app: redis
+  replicas: 1
   template:
     metadata:
-      creationTimestamp: null
       labels:
-        service: redis-db
+        app: redis
     spec:
       containers:
-        - image: redis:alpine
-          name: redis-db
-          resources: {}
-      restartPolicy: Always
-status: {}
+        - name: redis
+          image: redis:alpine
+          ports:
+            - containerPort: 6379
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
